@@ -23,7 +23,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
-import com.demo.batch.dao.entity.Product;
+import com.demo.batch.entity.Product;
 
 @Configuration
 @EnableBatchProcessing
@@ -40,9 +40,7 @@ public class BatchConfiguration {
         return new FlatFileItemReaderBuilder<Product>()
                 .name("productItemReader")
                 .linesToSkip(1)
-                .resource(new ClassPathResource("inputs/products.csv"))
-//                .delimited()
-//                .names(new String[]{"name", "sku", "description"})
+                .resource(new ClassPathResource("inputs/products2.csv"))
                 .lineMapper(lineMapper())
                 .recordSeparatorPolicy(new DefaultRecordSeparatorPolicy())
                 .fieldSetMapper(new BeanWrapperFieldSetMapper<Product>() {{

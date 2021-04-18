@@ -4,7 +4,7 @@ import org.springframework.batch.item.file.mapping.FieldSetMapper;
 import org.springframework.batch.item.file.transform.FieldSet;
 import org.springframework.stereotype.Component;
 
-import com.demo.batch.dao.entity.Product;
+import com.demo.batch.entity.Product;
 
 @Component
 public class ProductFieldSetMapper implements FieldSetMapper<Product> {

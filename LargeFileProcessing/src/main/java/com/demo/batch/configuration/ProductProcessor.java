@@ -2,7 +2,7 @@ package com.demo.batch.configuration;
 
 import org.springframework.batch.item.ItemProcessor;
 
-import com.demo.batch.dao.entity.Product;
+import com.demo.batch.entity.Product;
 
 public class ProductProcessor implements ItemProcessor<Product, Product>{
 
