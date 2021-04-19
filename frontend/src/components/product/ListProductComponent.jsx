@@ -32,7 +32,7 @@ class ListProductComponent extends Component{
         return (
         <div>
         <div className="container">
-            <h3>List Products {this.state.skuname}</h3>
+            <h3>List of Products with sku: {this.state.skuname}</h3>
             <table>
                 <thead>
                     <tr>
