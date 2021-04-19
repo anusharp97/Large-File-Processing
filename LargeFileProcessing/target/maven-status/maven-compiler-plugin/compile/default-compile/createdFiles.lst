@@ -1,0 +1,14 @@
+com/demo/batch/controller/ProductController.class
+com/demo/batch/Application.class
+com/demo/batch/entity/Product.class
+com/demo/batch/configuration/BatchConfiguration.class
+com/demo/batch/repository/IProductRepository.class
+com/demo/batch/configuration/ProductProcessor.class
+com/demo/batch/entity/ProductCount.class
+com/demo/batch/configuration/ProductFieldSetMapper.class
+com/demo/batch/services/implementations/ProductService.class
+com/demo/batch/services/interfaces/IProductService.class
+com/demo/batch/configuration/BatchConfiguration$1.class
+com/demo/batch/configuration/NotificationListener.class
+com/demo/batch/repository/IProductCountRepository.class
+com/demo/batch/TracePerformanceAspect.class
