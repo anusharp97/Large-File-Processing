@@ -25,6 +25,7 @@ import org.springframework.core.io.ClassPathResource;
 
 import com.demo.batch.entity.Product;
 
+
 @Configuration
 @EnableBatchProcessing
 public class BatchConfiguration {
