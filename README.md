@@ -18,8 +18,16 @@ Table 1: Product
 | ID    | SKU           | NAME    | DESCRIPTION   |
 | ------|:-------------:| -------:|--------------------------------------------------------------------------------------------------:|
 | 1     | lay-raise-best-end | Bryce Jones  | Art community floor adult your single type. Per back community former stock thing.      |
-| 2     | cup-return-guess     |   John Robinson  |                                                                                                   |
-| 3     | step-onto     |    Theresa Taylor  |                                                                                                   |
+| 2     | cup-return-guess     |   John Robinson  |    Produce successful hot tree past action young song. Himself then tax eye little last state vote. Country down list that speech economy leave. |
+| 3     | step-onto     |    Theresa Taylor  | 	Choice should lead budget task. Author best mention.
+Often stuff professional today allow after door instead. Model seat fear evidence. Now sing opportunity feeling no season show.|
+| 4     | citizen-some-middle| Roger Huerta | Important fight wrong position fine. Friend song interview glass pay. Organization possible just.|
+| 5     |term-important | John Buckley | 	Alone maybe education risk despite way.
+Want benefit manage financial story term must. Former wife activity firm example later. Black win rest ask.|
+| 6     | do-many-avoid | Tiffany Johnson | Born tree wind.
+Boy marriage begin value. Record health laugh ask under notice federal. Hard lose need sell treatment.
+Certain throw executive front late. Because truth risk.|
+
 
 In order to allow update the products based on sku, react based frontend is developed, which can be accessed at http://localhost:4200. Based on the sku entered, next page will display the records with the entered sku name, then the user can select the record that needs to be updated.
 
