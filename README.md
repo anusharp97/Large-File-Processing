@@ -14,8 +14,12 @@ Table "Product" can be seen filled with a sample of 1000 records read from produ
 JPA has been used for creation of tables, that takes care of queries needed to create them.
 
 Table 1: Product
--------------
--------------
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
 
 In order to allow update the products based on sku, react based frontend is developed, which can be accessed at http://localhost:4200. Based on the sku entered, next page will display the records with the entered sku name, then the user can select the record that needs to be updated.
 
