@@ -41,7 +41,7 @@ public class BatchConfiguration {
         return new FlatFileItemReaderBuilder<Product>()
                 .name("productItemReader")
                 .linesToSkip(1)
-                .resource(new ClassPathResource("inputs/products.csv"))
+                .resource(new ClassPathResource("inputs/products2.csv"))
                 .lineMapper(lineMapper())
                 .recordSeparatorPolicy(new DefaultRecordSeparatorPolicy())
                 .fieldSetMapper(new BeanWrapperFieldSetMapper<Product>() {{

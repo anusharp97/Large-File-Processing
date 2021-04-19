@@ -39,9 +39,10 @@ public class NotificationListener extends JobExecutionListenerSupport {
 		if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
 			LOGGER.info("!!! JOB FINISHED! Time to verify the results");
 
-			jdbcTemplate.query("SELECT name, sku, description FROM product",
-							(rs, row) -> new Product(rs.getString("name"), rs.getString("sku"), rs.getString("description")))
-					.forEach(product -> LOGGER.info("Found <" + product + "> in the database."));
+			//below lines can be uncommented to see the time taken
+//			jdbcTemplate.query("SELECT name, sku, description FROM product",
+//							(rs, row) -> new Product(rs.getString("name"), rs.getString("sku"), rs.getString("description")))
+//					.forEach(product -> LOGGER.info("Found <" + product + "> in the database."));
 			
 			
 			
