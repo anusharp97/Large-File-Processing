@@ -2,8 +2,8 @@
 - Framework
   - Backend: Springboot
   - Frontend: React
-- Database - in memory H@ database
-- 
+- Database - in memory H2 database
+
 ### Section a: Steps to run the code
 
 ``git clone https://github.com/anusharp97/Large-File-Processing.git ``
