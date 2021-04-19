@@ -1,4 +1,9 @@
 ## Large-File-Processing
+- Framework
+  - Backend: Springboot
+  - Frontend: React
+- Database - in memory H@ database
+- 
 ### Section a: Steps to run the code
 
 ``git clone https://github.com/anusharp97/Large-File-Processing.git ``
@@ -10,7 +15,7 @@ Redirect to the http://localhost:8080/h2-console/ to access in-memory h2 databas
 
 Table "Product" can be seen filled with a sample of 1000 records read from products.csv file.
 
-### Section b: Details of the teables created
+### Section b: Details of the tables created
 JPA has been used for creation of tables, that takes care of queries needed to create them.
 
 Table 1: Product
@@ -41,8 +46,10 @@ Table 2: ProductCount
 4. All product details are ingested in single table named "Product".
 5. "ProductCount" table is created with the result of aggregated query run on "Product" to fetch number of products with the same name.
 
-### Section c: Points Achieved
+### Section d: Points Not Achieved
 5. Although "ProductCount" table is created, data inside won't be reliable once the product records are updated by the user.
     - If I do so, it'd result in tightly coupling data layer with UI, which would be a poor architecture.
     - It also means one cannot be changed without changing the other.
 
+### Section e: Imporovements
+- Parallel Processing can be explored for the given data set, to reduce processing time even further.
