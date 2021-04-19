@@ -1,26 +1,4 @@
-  
-# Maven build container 
-
-FROM maven:3.6.3-openjdk-11 AS maven_build
-
-COPY pom.xml /tmp/
-
-COPY src /tmp/src/
-
-WORKDIR /tmp/
-
-RUN mvn package
-
-#pull base image
-
-FROM openjdk
-
-#expose port 8080
+FROM openjdk:8
+ADD target/docker-backend.jar docker-backend.jar
 EXPOSE 8080
-
-#default command
-CMD java -jar /data/springboot-batch-1.0-SNAPSHOT.jar
-
-#copy springboot-batch to docker image from builder image
-
-COPY --from=maven_build /tmp/target/springboot-batch-1.0-SNAPSHOT.jar /data/springboot-batch-1.0-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar", "docker-backend.jar"]
