@@ -41,4 +41,8 @@ Table 2: ProductCount
 4. All product details are ingested in single table named "Product".
 5. "ProductCount" table is created with the result of aggregated query run on "Product" to fetch number of products with the same name.
 
+### Section c: Points Achieved
+5. Although "ProductCount" table is created, data inside won't be reliable once the product records are updated by the user.
+    - If I do so, it'd result in tightly coupling data layer with UI, which would be a poor architecture.
+    - It also means one cannot be changed without changing the other.
 
