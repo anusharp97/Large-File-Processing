@@ -32,9 +32,9 @@ Table 2: ProductCount
 | Maria Richard | 4      | 
 
 ### Section c: Points Achieved
-1 OOPS concept followed
-2 Batch processing has been implmented with the chunk size of 100 rows.
-3 Support has been provided to update existing products based on sku.
+1. OOPS concept followed
+2. Batch processing has been implmented with the chunk size of 100 rows.
+3. Support has been provided to update existing products based on sku.
 Workaround followed: React based front end is developed where in a user can fetch products with given sku name resulting in resultRecords, and then allows user to update a record from resultRecords. 
 Frontend can be accessed at http://localhost:4200. Based on the sku entered, next page will display the records with the entered sku name, then the user can select the record that needs to be updated.
 
