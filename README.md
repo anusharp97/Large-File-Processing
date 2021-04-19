@@ -24,6 +24,12 @@ Table 1: Product
 | 5     |term-important | John Buckley | 	Alone maybe education risk despite way.Want benefit manage financial story term must. Former wife activity firm example|
 | 6     | do-many-avoid | Tiffany Johnson | Born tree wind.Boy marriage begin value. Record health laugh ask under notice federal. Hard lose need sell treatment.|
 
+Table 2: ProductCount
+| Name   | NoOfProducts      |
+| ------------- |:-------------:| 
+| Aaron Miller     | 2| 
+| Abigail Rodriguez | 1      | 
+| Maria Richard | 4      | 
 
 In order to allow update the products based on sku, react based frontend is developed, which can be accessed at http://localhost:4200. Based on the sku entered, next page will display the records with the entered sku name, then the user can select the record that needs to be updated.
 
