@@ -4,5 +4,6 @@
 ``git clone https://github.com/anusharp97/Large-File-Processing.git ``
 
 ``docker-compose up``
-![image](https://user-images.githubusercontent.com/35512779/115274005-d86d3c00-a15d-11eb-8ce2-ff0449324216.png)
+![image](https://user-images.githubusercontent.com/35512779/115274177-081c4400-a15e-11eb-9bd4-53a982873dce.png)
+
 
