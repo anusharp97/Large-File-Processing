@@ -31,6 +31,8 @@ Table 2: ProductCount
 | Abigail Rodriguez | 1      | 
 | Maria Richard | 4      | 
 
+### Section c: Points Achieved
+##### 1. Follows the OOPS concepts
 In order to allow update the products based on sku, react based frontend is developed, which can be accessed at http://localhost:4200. Based on the sku entered, next page will display the records with the entered sku name, then the user can select the record that needs to be updated.
 
 
