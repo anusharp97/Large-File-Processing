@@ -38,5 +38,7 @@ Table 2: ProductCount
   - Workaround followed: 
     - React based front end is developed where in a user can fetch products with given sku name resulting in resultRecords, and then allows user to update a record from resultRecords. 
     - Frontend can be accessed at http://localhost:4200. Based on the sku entered, next page will display the records with the entered sku name, then the user can select the record that needs to be updated.
+4. All product details are ingested in single table named "Product".
+5. "ProductCount" table is created with the result of aggregated query run on "Product" to fetch number of products with the same name.
 
 
