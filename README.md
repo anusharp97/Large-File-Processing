@@ -15,7 +15,7 @@ JPA has been used for creation of tables, that takes care of queries needed to c
 
 Table 1: Product
 
-| ID    | SKU           | NAME    | DESCRIPTION                                                                                       |
+| ID    | SKU           | NAME    | DESCRIPTION   |
 | ------|:-------------:| -------:|--------------------------------------------------------------------------------------------------:|
 | 1     | lay-raise-best-end | Bryce Jones  | Art community floor adult your single type. Per back community former stock thing.      |
 | 2     | cup-return-guess     |   John Robinson  |                                                                                                   |
