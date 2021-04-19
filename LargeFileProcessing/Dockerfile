@@ -19,8 +19,8 @@ FROM openjdk
 EXPOSE 8080
 
 #default command
-CMD java -jar /data/large-file-processing-0.1.0.jar
+CMD java -jar /data/springboot-batch-1.0-SNAPSHOT.jar
 
-#copy hello world to docker image from builder image
+#copy springboot-batch to docker image from builder image
 
-COPY --from=maven_build /tmp/target/large-file-processing-0.1.0.jar /data/large-file-processing-0.1.0.jar
+COPY --from=maven_build /tmp/target/springboot-batch-1.0-SNAPSHOT.jar /data/springboot-batch-1.0-SNAPSHOT.jar
