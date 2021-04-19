@@ -22,8 +22,8 @@ Table 1: Product
 | 3     | step-onto     |    Theresa Taylor  | 	Choice should lead budget task. Author best mention.
 Often stuff professional today allow after door instead. Model seat fear evidence. Now sing opportunity feeling no season show.|
 | 4     | citizen-some-middle| Roger Huerta | Important fight wrong position fine. Friend song interview glass pay. Organization possible just.|
-| 5     |term-important | John Buckley | 	Alone maybe education risk despite way.\nWant benefit manage financial story term must. Former wife activity firm example later. Black win rest ask.|
-| 6     | do-many-avoid | Tiffany Johnson | Born tree wind.\nBoy marriage begin value. Record health laugh ask under notice federal. Hard lose need sell treatment.
+| 5     |term-important | John Buckley | 	Alone maybe education risk despite way.Want benefit manage financial story term must. Former wife activity firm example later. Black win rest ask.|
+| 6     | do-many-avoid | Tiffany Johnson | Born tree wind.Boy marriage begin value. Record health laugh ask under notice federal. Hard lose need sell treatment.
 Certain throw executive front late. Because truth risk.|
 
 
