@@ -1,6 +1,6 @@
 ## Large-File-Processing
 
-Visit problem statement details [here](https://docs.google.com/document/d/1RJjQHDxi7jOQVOq8lrkUFPVJO5vnozPRGO-bpzx13wM/edit#)
+Visit the problem statement [here](https://docs.google.com/document/d/1RJjQHDxi7jOQVOq8lrkUFPVJO5vnozPRGO-bpzx13wM/edit#)
 
 - Framework
   - Backend: Springboot
