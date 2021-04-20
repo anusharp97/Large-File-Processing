@@ -38,6 +38,10 @@ Table 2: ProductCount
 | Aaron Miller     | 2| 
 | Abigail Rodriguez | 1      | 
 | Maria Richard | 4      | 
+| John Robinson| 1|
+| Bryce Jones | 2|
+| Tiffany Johnson| 1|
+
 
 ### Section c: Points Achieved
 1. OOPS concept followed.
