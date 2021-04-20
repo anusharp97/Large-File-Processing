@@ -25,79 +25,89 @@ import org.springframework.core.io.ClassPathResource;
 
 import com.demo.batch.entity.Product;
 
-
 @Configuration
 @EnableBatchProcessing
 public class BatchConfiguration {
 
-    @Autowired
-    public JobBuilderFactory jobBuilderFactory;
+	@Autowired
+	public JobBuilderFactory jobBuilderFactory;
 
-    @Autowired
-    public StepBuilderFactory stepBuilderFactory;
+	@Autowired
+	public StepBuilderFactory stepBuilderFactory;
 
-    @Bean
-    public FlatFileItemReader<Product> reader() {
-        return new FlatFileItemReaderBuilder<Product>()
-                .name("productItemReader")
-                .linesToSkip(1)
-                .resource(new ClassPathResource("inputs/products2.csv"))
-                .lineMapper(lineMapper())
-                .recordSeparatorPolicy(new DefaultRecordSeparatorPolicy())
-                .fieldSetMapper(new BeanWrapperFieldSetMapper<Product>() {{
-                    setTargetType(Product.class);
-                }})
-                .build();
-    }
+	/**
+	 * FlatFileItemReader<T> Restartable ItemReader that reads lines from input
+	 * setResource(Resource).
+	 * 
+	 * @return
+	 */
+	@Bean
+	public FlatFileItemReader<Product> reader() {
+		return new FlatFileItemReaderBuilder<Product>().name("productItemReader").linesToSkip(1)
+				.resource(new ClassPathResource("inputs/products2.csv")).lineMapper(lineMapper())
+				.recordSeparatorPolicy(new DefaultRecordSeparatorPolicy())
+				.fieldSetMapper(new BeanWrapperFieldSetMapper<Product>() {
+					{
+						setTargetType(Product.class);
+					}
+				}).build();
+	}
 
-    @Bean
-    public LineMapper<Product> lineMapper() {
+	/**
+	 * the lineMapper for mapping lines (strings) to domain objects typically used
+	 * to map lines read from a file to domain objects on a per line basis.
+	 * lineTokenizer to split string obtained typically from a file into tokens. In
+	 * our example we are using DelimitedLineTokenizer that is because we are using
+	 * csv file. fieldSetMapper to map data obtained from a FieldSet into an object.
+	 * 
+	 * @return
+	 */
+	@Bean
+	public LineMapper<Product> lineMapper() {
 
-        final DefaultLineMapper<Product> defaultLineMapper = new DefaultLineMapper<>();
-        final DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
-        //lineTokenizer.setDelimiter(";");
-        lineTokenizer.setStrict(false);
-        lineTokenizer.setNames(new String[] {"name", "sku", "description"});
-        lineTokenizer.setIncludedFields(new int[] { 0, 1, 2 });
+		final DefaultLineMapper<Product> defaultLineMapper = new DefaultLineMapper<>();
+		final DelimitedLineTokenizer lineTokenizer = new DelimitedLineTokenizer();
+		lineTokenizer.setStrict(false);
+		lineTokenizer.setNames(new String[] { "name", "sku", "description" });
+		lineTokenizer.setIncludedFields(new int[] { 0, 1, 2 });
 
-        final ProductFieldSetMapper fieldSetMapper = new ProductFieldSetMapper();
-        defaultLineMapper.setLineTokenizer(lineTokenizer);
-        defaultLineMapper.setFieldSetMapper(fieldSetMapper);
+		final ProductFieldSetMapper fieldSetMapper = new ProductFieldSetMapper();
+		defaultLineMapper.setLineTokenizer(lineTokenizer);
+		defaultLineMapper.setFieldSetMapper(fieldSetMapper);
 
-        return defaultLineMapper;
-    }
+		return defaultLineMapper;
+	}
 
-    @Bean
-    public ProductProcessor processor() {
-        return new ProductProcessor();
-    }
+	@Bean
+	public ProductProcessor processor() {
+		return new ProductProcessor();
+	}
 
-    @Bean
-    public JdbcBatchItemWriter<Product> writer(final DataSource dataSource) {
-        return new JdbcBatchItemWriterBuilder<Product>()
-                .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
-                .sql("INSERT INTO product (name, sku, description) VALUES (:name, :sku, :description)")
-                .dataSource(dataSource)
-                .build();
-    }
+	/**
+	 * The itemWriter object will set JDBC connection and sql statement is prepared
+	 * for the batch action we want to perform in the database. A convenient
+	 * implementation for providing BeanPropertySqlParameterSource when the item has
+	 * JavaBean properties that correspond to names used for parameters in the SQL
+	 * statement.
+	 *
+	 */
+	@Bean
+	public JdbcBatchItemWriter<Product> writer(final DataSource dataSource) {
+		return new JdbcBatchItemWriterBuilder<Product>()
+				.itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
+				.sql("INSERT INTO product (name, sku, description) VALUES (:name, :sku, :description)")
+				.dataSource(dataSource).build();
+	}
 
-    @Bean
-    public Job importProductJob(NotificationListener listener, Step step) {
-        return jobBuilderFactory.get("importProductJob")
-                .incrementer(new RunIdIncrementer())
-                .listener(listener)
-                .flow(step)
-                .end()
-                .build();
-    }
+	@Bean
+	public Job importProductJob(NotificationListener listener, Step step) {
+		return jobBuilderFactory.get("importProductJob").incrementer(new RunIdIncrementer()).listener(listener)
+				.flow(step).end().build();
+	}
 
-    @Bean
-    public Step step1(JdbcBatchItemWriter<Product> writer) {
-        return stepBuilderFactory.get("step1")
-                .<Product, Product> chunk(100)
-                .reader(reader())
-                .processor(processor())
-                .writer(writer)
-                .build();
-    }
+	@Bean
+	public Step step1(JdbcBatchItemWriter<Product> writer) {
+		return stepBuilderFactory.get("step1").<Product, Product>chunk(100).reader(reader()).processor(processor())
+				.writer(writer).build();
+	}
 }
