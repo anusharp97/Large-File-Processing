@@ -9,6 +9,10 @@ Visit the problem statement [here](https://docs.google.com/document/d/1RJjQHDxi7
 
 ### Section a: Steps to run the code
 
+Make sure docker engine is installed on your system.
+  1. run `docker --info`
+  2. run `docker version`
+
 ``git clone https://github.com/anusharp97/Large-File-Processing.git ``
 
 ``docker-compose up``
